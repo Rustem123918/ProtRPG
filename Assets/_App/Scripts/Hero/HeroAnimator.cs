@@ -1,11 +1,8 @@
-﻿using _App.Scripts.Logic;
-using System;
-using UnityEditor.Animations;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _App.Scripts.Hero
 {
-    public class HeroAnimator : MonoBehaviour, IAnimationStateReader
+    public class HeroAnimator : MonoBehaviour//, IAnimationStateReader
     {
         private static readonly int MoveHash = Animator.StringToHash("Walking");
         private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
@@ -26,6 +23,7 @@ namespace _App.Scripts.Hero
 
         public Animator Animator;
         public CharacterController CharacterController;
+
         private bool _isMoving;
 
         private void Update()
@@ -43,16 +41,16 @@ namespace _App.Scripts.Hero
         //public void PlayDeath() => Animator.SetTrigger(DieHash);
         //public void ResetToIdle() => Animator.Play(_idleStateHash, -1);
 
-        public void EnteredState(int stateHash)
-        {
-            //State = StateFor(stateHash);
-            //StateEntered?.Invoke(State);
-        }
+        //public void EnteredState(int stateHash)
+        //{
+        //    State = StateFor(stateHash);
+        //    StateEntered?.Invoke(State);
+        //}
 
-        public void ExitedState(int stateHash)
-        {
-            //StateExited?.Invoke(StateFor(stateHash));
-        }
+        //public void ExitedState(int stateHash)
+        //{
+        //    StateExited?.Invoke(StateFor(stateHash));
+        //}
 
         //private AnimatorState StateFor(int stateHash)
         //{
