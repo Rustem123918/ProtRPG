@@ -1,5 +1,4 @@
 ﻿using _App.Scripts.Services.Input;
-using System;
 using UnityEngine;
 
 namespace _App.Scripts.Infrastructure
@@ -7,6 +6,7 @@ namespace _App.Scripts.Infrastructure
     public class BootstrapState : IState
     {
         private const string Initial = "Initial";
+        private const string MainSceneName = "Main";
         private readonly GameStateMachine _gameStateMachine;
         private readonly SceneLoader _sceneLoader;
 
@@ -24,7 +24,7 @@ namespace _App.Scripts.Infrastructure
 
         private void EnterLoadLevel()
         {
-            _gameStateMachine.Enter<LoadLevelState, string>("Main");
+            _gameStateMachine.Enter<LoadLevelState, string>(MainSceneName);
         }
 
         private void RegisterServices()
