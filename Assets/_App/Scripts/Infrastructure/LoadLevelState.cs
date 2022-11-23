@@ -9,6 +9,7 @@ namespace _App.Scripts.Infrastructure
         private const string InitialPointTag = "InitialPoint";
         private const string HeroPath = "Hero/Hero";
         private const string HudPath = "Hud/Hud";
+
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
