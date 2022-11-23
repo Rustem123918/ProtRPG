@@ -24,7 +24,7 @@ namespace _App.Scripts.Infrastructure
 
         private void EnterLoadLevel()
         {
-
+            _gameStateMachine.Enter<LoadLevelState, string>("Main");
         }
 
         private void RegisterServices()
