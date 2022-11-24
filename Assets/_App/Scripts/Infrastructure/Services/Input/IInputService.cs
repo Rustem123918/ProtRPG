@@ -1,7 +1,6 @@
-﻿using _App.Scripts.Infrastructure.Services;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _App.Scripts.Services.Input
+namespace _App.Scripts.Infrastructure.Services.Input
 {
     public interface IInputService : IService
     {

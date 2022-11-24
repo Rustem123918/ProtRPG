@@ -1,7 +1,7 @@
 ﻿using _App.Scripts.Infrastructure.AssetManagement;
 using _App.Scripts.Infrastructure.Factory;
 using _App.Scripts.Infrastructure.Services;
-using _App.Scripts.Services.Input;
+using _App.Scripts.Infrastructure.Services.Input;
 using UnityEngine;
 
 namespace _App.Scripts.Infrastructure.States

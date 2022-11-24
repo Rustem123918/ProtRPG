@@ -1,6 +1,5 @@
-﻿using _App.Scripts.Infrastructure;
-using _App.Scripts.Infrastructure.Services;
-using _App.Scripts.Services.Input;
+﻿using _App.Scripts.Infrastructure.Services;
+using _App.Scripts.Infrastructure.Services.Input;
 using UnityEngine;
 
 namespace _App.Scripts.Hero

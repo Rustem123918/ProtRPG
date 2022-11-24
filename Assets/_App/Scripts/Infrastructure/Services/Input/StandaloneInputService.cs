@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _App.Scripts.Services.Input
+namespace _App.Scripts.Infrastructure.Services.Input
 {
     public class StandaloneInputService : InputService
     {
