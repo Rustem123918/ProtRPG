@@ -1,7 +1,7 @@
 ﻿using _App.Scripts.Services.Input;
 using UnityEngine;
 
-namespace _App.Scripts.Infrastructure
+namespace _App.Scripts.Infrastructure.States
 {
     public class BootstrapState : IState
     {

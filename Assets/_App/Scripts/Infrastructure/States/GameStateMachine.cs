@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace _App.Scripts.Infrastructure
+namespace _App.Scripts.Infrastructure.States
 {
     public class GameStateMachine
     {

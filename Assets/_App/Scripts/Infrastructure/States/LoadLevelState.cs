@@ -1,8 +1,9 @@
 ﻿using _App.Scripts.CameraLogic;
+using _App.Scripts.Infrastructure.Factory;
 using _App.Scripts.Logic;
 using UnityEngine;
 
-namespace _App.Scripts.Infrastructure
+namespace _App.Scripts.Infrastructure.States
 {
     public class LoadLevelState : IPayloadedState<string>
     {
