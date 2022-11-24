@@ -1,10 +1,12 @@
-﻿using _App.Scripts.Infrastructure.Services;
+﻿using _App.Scripts.Data;
+using _App.Scripts.Infrastructure.Services;
 using _App.Scripts.Infrastructure.Services.Input;
+using _App.Scripts.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
 
 namespace _App.Scripts.Hero
 {
-    public class HeroMove : MonoBehaviour
+    public class HeroMove : MonoBehaviour, ISavedProgress
     {
         [SerializeField] private CharacterController _characterController;
         [SerializeField] private float _movementSpeed;
@@ -38,6 +40,16 @@ namespace _App.Scripts.Hero
             movementVector += Physics.gravity;
 
             _characterController.Move(_movementSpeed * movementVector * Time.deltaTime);
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateProgress(PlayerProgress progress)
+        {
+            progress.WorldData.Position = transform.position.AsVectorData();
         }
     }
 }
