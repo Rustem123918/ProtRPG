@@ -3,6 +3,7 @@ using _App.Scripts.Infrastructure.Services;
 using _App.Scripts.Infrastructure.Services.Input;
 using _App.Scripts.Infrastructure.Services.PersistentProgress;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _App.Scripts.Hero
 {
@@ -42,14 +43,32 @@ namespace _App.Scripts.Hero
             _characterController.Move(_movementSpeed * movementVector * Time.deltaTime);
         }
 
-        public void LoadProgress(PlayerProgress progress)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void UpdateProgress(PlayerProgress progress)
         {
-            progress.WorldData.Position = transform.position.AsVectorData();
+            progress.WorldData.PositionOnLevel = new PositionOnLevel(CurrentLevel(),
+                transform.position.AsVectorData());
+        }
+
+        public void LoadProgress(PlayerProgress progress)
+        {
+            if(CurrentLevel() == progress.WorldData.PositionOnLevel.Level)
+            {
+                var savedPosition = progress.WorldData.PositionOnLevel.Position;
+                if(savedPosition != null)
+                    Warp(to: savedPosition);
+            }
+        }
+
+        private void Warp(Vector3Data to)
+        {
+            _characterController.enabled = false;
+            transform.position = to.AsUnityVector();
+            _characterController.enabled = true;
+        }
+
+        private string CurrentLevel()
+        {
+            return SceneManager.GetActiveScene().name;
         }
     }
 }
