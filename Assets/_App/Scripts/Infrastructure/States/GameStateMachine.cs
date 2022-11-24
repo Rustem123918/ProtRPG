@@ -1,4 +1,6 @@
-﻿using _App.Scripts.Logic;
+﻿using _App.Scripts.Infrastructure.Factory;
+using _App.Scripts.Infrastructure.Services;
+using _App.Scripts.Logic;
 using System;
 using System.Collections.Generic;
 
@@ -9,12 +11,12 @@ namespace _App.Scripts.Infrastructure.States
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain)
+        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services)
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain),
+                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
+                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain, services.Single<IGameFactory>()),
                 [typeof(GameLoopState)] = new GameLoopState(this)
             };
         }
