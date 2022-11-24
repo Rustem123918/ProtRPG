@@ -1,4 +1,7 @@
-﻿using _App.Scripts.Services.Input;
+﻿using _App.Scripts.Infrastructure.AssetManagement;
+using _App.Scripts.Infrastructure.Factory;
+using _App.Scripts.Infrastructure.Services;
+using _App.Scripts.Services.Input;
 using UnityEngine;
 
 namespace _App.Scripts.Infrastructure.States
@@ -30,6 +33,8 @@ namespace _App.Scripts.Infrastructure.States
         private void RegisterServices()
         {
             Game.InputService = RegisterInputService();
+
+            AllServices.Container.RegisterSingle<IGameFactory>(new GameFactory(AllServices.Container.Single<IAssets>()));
         }
 
         public void Exit()
