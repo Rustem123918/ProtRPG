@@ -1,5 +1,8 @@
-﻿namespace _App.Scripts.Data
+﻿using System;
+
+namespace _App.Scripts.Data
 {
+    [Serializable]
     public class Vector3Data
     {
         public float X;
