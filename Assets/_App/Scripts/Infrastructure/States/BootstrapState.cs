@@ -27,7 +27,7 @@ namespace _App.Scripts.Infrastructure.States
 
         public void Enter()
         {
-            _sceneLoader.Load(Initial, onLoaded: EnterLoadLevel);
+            _sceneLoader.Load(Initial, onLoaded: EnterLoadProgressState);
         }
 
         public void Exit()
@@ -35,7 +35,7 @@ namespace _App.Scripts.Infrastructure.States
 
         }
 
-        private void EnterLoadLevel()
+        private void EnterLoadProgressState()
         {
             _gameStateMachine.Enter<LoadProgressState>();
         }
