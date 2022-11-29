@@ -4,11 +4,11 @@ namespace _App.Scripts.Hero
 {
     public class HeroAnimator : MonoBehaviour//, IAnimationStateReader
     {
-        private static readonly int MoveHash = Animator.StringToHash("Walking");
+        private static readonly int MoveHash = Animator.StringToHash("Speed");
         private static readonly int IsMovingHash = Animator.StringToHash("IsMoving");
-        //private static readonly int AttackHash = Animator.StringToHash("AttackNormal");
-        //private static readonly int HitHash = Animator.StringToHash("Hit");
-        //private static readonly int DieHash = Animator.StringToHash("Die");
+        private static readonly int AttackHash = Animator.StringToHash("Attack1");
+        private static readonly int HitHash = Animator.StringToHash("Hit");
+        private static readonly int DieHash = Animator.StringToHash("Die");
 
         //private readonly int _idleStateHash = Animator.StringToHash("Idle");
         //private readonly int _idleStateFullHash = Animator.StringToHash("Base Layer.Idle");
@@ -36,9 +36,9 @@ namespace _App.Scripts.Hero
         }
 
         //public bool IsAttacking => State == AnimatorState.Attack;
-        //public void PlayHit() => Animator.SetTrigger(HitHash);
-        //public void PlayAttack() => Animator.SetTrigger(AttackHash);
-        //public void PlayDeath() => Animator.SetTrigger(DieHash);
+        public void PlayHit() => Animator.SetTrigger(HitHash);
+        public void PlayAttack() => Animator.SetTrigger(AttackHash);
+        public void PlayDeath() => Animator.SetTrigger(DieHash);
         //public void ResetToIdle() => Animator.Play(_idleStateHash, -1);
 
         //public void EnteredState(int stateHash)
